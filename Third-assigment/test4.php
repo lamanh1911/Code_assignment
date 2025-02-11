@@ -26,5 +26,7 @@ echo "Ket qua A + B la :" . ($numberA_inter + $numberB);
 echo "<br>";
 echo "Ket qua A * B la :" . ($numberA_inter * $numberB);
 echo "<br>";
-echo "Ket qua A / B la :" . ($numberA_inter / $numberB);
+echo "Ket qua A / B la :" . intdiv($numberA_inter, $numberB);
+echo "<br>";
+echo "Ket qua phan du cua A/b la : " . ($numberA_inter % $numberB)
 ?>
