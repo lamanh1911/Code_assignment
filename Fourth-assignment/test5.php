@@ -14,17 +14,24 @@ function checkValueType($value){
 checkValueType($value);
 echo "<br>";
 
+function formatValue($value1,$value2){
+    if(is_float($value1) || is_float($value2)){
+        echo "value1 :" . var_export($value1,true) . "," . "value2 :" . var_export($value2,true); //var_export chi cho so thuc
+    } else {
+        echo "value1 :" . json_encode($value1) . "," . "value2 :" . json_encode($value2); //cho cac kieu con lai
+    }
+}
 function compareValue($value1,$value2){
-    echo "value1 :" . json_encode($value1) . "," . "value2 :" . json_encode($value2);
+    formatValue($value1,$value2);
     echo "<br>";
-    if(gettype($value1) === gettype($value2)){   
-        if($value1 === $value2){
+    if($value1 == $value2){   
+        if(gettype($value1) === gettype($value2)){
             echo "cung kieu du lieu & cung gia tri";
         } else {
-            echo "cung kieu du lieu & khac gia tri";
+            echo "khac kieu du lieu nhung cung gia tri";
         }
     } else {
-        echo "khac kieu du lieu";
+        echo "khac nhau hoan toan";
     }       
 }
 compareValue(10,10);
