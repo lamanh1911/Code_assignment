@@ -22,18 +22,18 @@ function formatValue($value1,$value2){
     }
 }
 function compareValue($value1,$value2){
-    formatValue($value1,$value2);
+    echo "value1 :" . json_encode($value1,JSON_PRESERVE_ZERO_FRACTION) . "," . "value2 :" . json_encode($value2,JSON_PRESERVE_ZERO_FRACTION);
     echo "<br>";
-    if($value1 == $value2){   
-        if(gettype($value1) === gettype($value2)){
-            echo "cung kieu du lieu & cung gia tri";
-        } else {
-            echo "khac kieu du lieu nhung cung gia tri";
-        }
+    if($value1 == $value2){
+        if (gettype($value1) === gettype($value2)){
+            echo "cung kieu cung gia tri";
     } else {
-        echo "khac nhau hoan toan";
-    }       
-}
+        echo "khac kieu nhung cung gia tri";
+    }         
+    } else {
+    echo "khac nhau hoan toan";
+
+}}
 compareValue(10,10);
 echo "<br>";
 compareValue("10",10);
