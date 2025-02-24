@@ -14,26 +14,25 @@ function checkValueType($value){
 checkValueType($value);
 echo "<br>";
 
-function formatValue($value1,$value2){
-    if(is_float($value1) || is_float($value2)){
-        echo "value1 :" . var_export($value1,true) . "," . "value2 :" . var_export($value2,true); //var_export chi cho so thuc
-    } else {
-        echo "value1 :" . json_encode($value1) . "," . "value2 :" . json_encode($value2); //cho cac kieu con lai
-    }
-}
 function compareValue($value1,$value2){
     echo "value1 :" . json_encode($value1,JSON_PRESERVE_ZERO_FRACTION) . "," . "value2 :" . json_encode($value2,JSON_PRESERVE_ZERO_FRACTION);
     echo "<br>";
-    if($value1 == $value2){
-        if (gettype($value1) === gettype($value2)){
-            echo "cung kieu cung gia tri";
-    } else {
-        echo "khac kieu nhung cung gia tri";
-    }         
-    } else {
-    echo "khac nhau hoan toan";
 
-}}
+    // cung kieu cung gia tri
+    if($value1 === $value2){
+        echo "cung kieu cung gia tri";
+        return ;
+    }
+    // Khac kieu cung gia tri
+    if ($value1 == $value2 && gettype($value1) !== gettype($value2)){
+        echo "khac kieu nhung cung gia tri";
+        return ;
+    }
+
+    if ($value1 != $value2) {
+        echo "khac nhau hoan toan";
+    }
+}
 compareValue(10,10);
 echo "<br>";
 compareValue("10",10);
