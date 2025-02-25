@@ -8,7 +8,7 @@ $cart = [
 $totalPrice = 0;
 foreach($cart as $item){
     echo "Sản phẩm: {$item['name']}, Giá: {$item['price']} USD; <br>";
-    $totalPrice += $item['price'];
-    echo "Tổng giá trị đơn hàng là: {$totalPrice} USD";
+    $totalPrice = $totalPrice + $item['price'];
 }
+echo "Tổng giá trị đơn hàng là: {$totalPrice} USD";
 ?>

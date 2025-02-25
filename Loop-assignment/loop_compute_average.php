@@ -5,13 +5,22 @@ $students = [
     ["name" => "Tran C", "scores" => [7, 7, 7, 7]]
 ];
 
-foreach($students as $student){
-    foreach ($student as $key => $value){
-        if (is_array($value)){
-            echo "$key: " . implode(", ", $value) . "<br>";
-        } else {
-            echo "$key: $value <br>";
-        }
+function computeAverage($score){
+    if(empty($score)){
+        return 0;
     }
-}
+    return array_sum($score)/count($score);
+} // tao mot ham de tinh trung binh 
+
+foreach($students as $student){  // Duyệt từng học sinh trong mảng
+    echo "Name : {$student['name']} <br>"; //Hien thi ten
+
+        if (is_array($student['scores'])) //Neu score la mang thi in ra
+        {                
+            echo "Scores: " . implode(", ", $student['scores']) . "<br>";
+            $average = computeAverage($student['scores']);
+            echo "Diem trung binh la: $average <br>"; 
+        }   
+    }
+
 ?>
