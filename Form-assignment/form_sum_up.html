@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .error {
+            color: red;
+            font-size: 14px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="myForm" method="post" action="form_handling.php">
+        <label for="num1">Nhập số thứ nhất: </label><br>
+        <input type="text" id="num1" name="num1"><br>
+        <span class="error" id="num1Error"></span>
+        <br>
+
+        <label for="num2">Nhập số thứ hai:</label><br>
+        <input type="text" id="num2" name="num2"><br>
+        <span class="error" id="num2Error"></span>
+        <br>
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            let isValid = true;
+            document.getElementById("num1Error").innerText = "";
+            document.getElementById("num2Error").innerText = ""; //xoa message truoc do
+
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            if (num1 === "") {
+                document.getElementById("num1Error").innerText = "Vui lòng nhập số thứ nhất";
+                isValid = false;
+            } else if (isNaN(num1)) {
+                document.getElementById("num1Error").innerText = "Vui lòng nhập một số hợp lệ!";
+                isValid = false;
+            }
+
+            if (num2 === "") {
+                document.getElementById("num2Error").innerText = "Vui lòng nhập số thứ hai";
+                isValid = false;
+            } else if (isNaN(num2)) {
+                document.getElementById("num2Error").innerText = "Vui lòng nhập một số hợp lệ!";
+                isValid = false;
+            }
+
+            if (!isValid) {
+                event.preventDefault(); // Nếu có lỗi, ngăn form gửi đi
+            }
+        });
+    </script>
+</body>
+
+</html>
