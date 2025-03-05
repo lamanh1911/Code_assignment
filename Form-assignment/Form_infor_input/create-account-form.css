@@ -1,0 +1,99 @@
+.create-account-form {
+    width: 35%;
+    height: auto;
+    margin-left: 30%;
+    margin-top: 50px;
+    border: 1px solid none;
+}
+
+@media screen and (max-width: 768px) {
+    .create-account-form {
+        width: 90%;
+        /* Tăng kích thước cho dễ nhìn */
+        margin-left: 5%;
+        /* Canh giữa */
+    }
+
+    .profile {
+        flex-direction: column;
+        /* Xếp dọc trên mobile */
+        gap: 10px;
+    }
+}
+
+.name-field {
+    display: flex;
+    gap: 8%;
+    width: 113%;
+}
+
+.last-name-field,
+.given-name-field {
+    width: 40%;
+}
+
+input,
+select {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #a5a5a5;
+    outline: none;
+    font-size: 15px;
+    color: #0a0a0a;
+}
+
+select:invalid {
+    color: #a5a5a5;
+}
+
+input::placeholder {
+    font-size: 15px;
+    color: #a5a5a5;
+}
+
+.name {
+    width: 47%;
+}
+
+.create-an-account-title {
+    text-align: center;
+    font-size: 25px;
+}
+
+.required-text {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.dropdown-container {
+    gap: 15px;
+    display: flex;
+}
+
+.year,
+.day,
+.month {
+    width: 35%;
+}
+
+.check-policy {
+    display: flex;
+    margin-top: 10px;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+}
+
+button {
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    height: 35px;
+    border-radius: 3px;
+}

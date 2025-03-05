@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="create-account-form.css">
+</head>
+
+<body>
+    <div class="create-account-form">
+        <h1 class="create-an-account-title">Create an account</h1>
+        <div class="required-text">*Required field</div>
+        <form id="createAccountForm" method="post" action="form_infor_input.php" novalidate>
+            <label for="mail-password-title">Sign-in information</label><br><br>
+
+            <input type="email" name="email" id="email" placeholder="Email address*"><br>
+            <span class="error" id="mailError"></span><br>
+            <input type="password" name="password" id="password" placeholder="Password*"><br>
+            <span class="error" id="passwordError"></span><br>
+            <span class="password-description">Please create a password that is between 8 and 15 characters long and
+                that contains a combination of uppercase and lowercase letters and numbers (all
+                half-width).</span><br><br>
+
+            <label for="profile-infor">Profile</label><br><br>
+            <div class="profile">
+                <div class="name-field">
+                    <div class="last-name-field">
+                        <input class="Last-name" id="lastName" name="last" type="text" placeholder="Last Name*">
+                        <span class="error" id="lastNameError"></span>
+                    </div>
+                    <div class="given-name-field">
+                        <input class="Given-name" id="givenName" name="given" type="text" placeholder="Given Name*">
+                        <span class="error" id="givenNameError"></span>
+                    </div>
+                </div>
+                <br>
+                <div class="sex">
+                    <select id="sex" name="sex" title="Sex" required>
+                        <option value="" disabled selected>Gender</option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                        <option value="3">Unknown</option>
+                    </select>
+                    <span class="error" id="sexError"></span>
+                </div>
+                <br>
+                <div class="date-of-birth">
+                    <span>Date of birth*</span>
+                    <div class="dropdown-container">
+                        <div class="year">
+                            <select id="year" name="year" required>
+                                <option value="" disabled selected>Year</option>
+                            </select>
+                            <span class="error" id="yearError"></span>
+                        </div>
+
+                        <div class="month">
+                            <select id="month" name="month" required>
+                                <option value="" disabled selected>Month</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                            <span class="error" id="monthError"></span>
+                        </div>
+
+                        <div class="day">
+                            <select id="day" name="day" required>
+                                <option value="" disabled selected>Day</option>
+                            </select>
+                            <span class="error" id="dayError"></span>
+                        </div>
+                    </div>
+                    <div class="error" id="futureError"></div>
+                    <br>
+                    <div class="phoneNumber">
+                        <input class="phone-number" id="phone" name="phone" type="text" placeholder="Phone number*">
+                        <span class="phone-description">Please enter using half-width characters, including hyphens
+                            (-).</span><br>
+                        <span class="error" id="phoneError"></span>
+                    </div>
+                    <br>
+                    <div class="check-policy">
+                        <input type="checkbox" name="checkpolicy" id="myCheckbox" style="width: 14px;">
+                        <label for="myCheckbox">I understand and agree to policy</label>
+                    </div>
+                    <span class="error" id="policyError"></span><br>
+
+                    <button type="submit">Confirm your information</button>
+        </form>
+    </div>
+
+    <script src="form_infor_js.js"></script>
+</body>
+
+</html>
