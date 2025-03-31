@@ -1,0 +1,340 @@
+body {
+    background-color: #e9e9e9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-default {
+    border: 1px #e9e9e9 solid;
+    width: 50%;
+    height: auto;
+    background-color: white;
+    margin-top: 3%;
+    font-family: 'Roboto';
+    font-size: 16px;
+    color: #4c4c4c;
+}
+
+form {
+    margin: 30px 20px;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('font/Roboto/Roboto-Italic-VariableFont_wdth\,wght.ttf');
+    src: url('font/Roboto/Roboto-VariableFont_wdth\,wght.ttf');
+}
+
+.header {
+    border: 1px none solid;
+    width: 100%;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.line {
+    border: 1px black solid;
+    margin-top: 10px;
+}
+
+.description {
+    border: 1px transparent solid;
+    margin-top: 10px;
+}
+
+.name-field,
+.references,
+.email-field,
+.email-reference {
+    border: 1px transparent solid;
+    margin-top: 15px;
+}
+
+.name-input,
+.position-and-date,
+.resume {
+    display: flex;
+}
+
+.first-name,
+.last-name {
+    width: 50%;
+    border: 1px solid transparent;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.last-name,
+.available-date,
+.resume-upload {
+    margin-left: 10px;
+}
+
+.email-input {
+    border: 1px transparent solid;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.position,
+.available-date,
+.resume-upload,
+.resume-link {
+    width: 50%;
+    border: 1px transparent solid;
+    margin-top: 15px;
+    box-sizing: border-box;
+}
+
+.dropdown,
+.date-input,
+.upload,
+.link {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.dropdown select {
+    appearance: none;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #4c4c4c;
+    border-radius: 3px;
+    background: white;
+    font-size: 16px;
+    cursor: pointer;
+    color: #4c4c4c;
+    height: 34px;
+}
+
+select:hover {
+    border-color: #0099cc;
+}
+
+select:focus {
+    background-color: rgba(0, 153, 204, 0.1);
+    /* Màu xanh khi click vào */
+    outline: none;
+    /* Ẩn viền mặc định của trình duyệt */
+}
+
+.arrow-icon {
+    position: absolute;
+    right: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #333;
+    background: #e0e0e0;
+    padding: 6px 14px;
+    border-radius: 3px;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 4px;
+    margin-bottom: 3px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    height: 34px;
+    border-radius: 3px;
+    border: 1px solid #4c4c4c;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+    padding-left: 10px;
+    color: #383737;
+    font-family: 'Roboto';
+    font-size: 16px;
+}
+
+input[type="date"] {
+    color: #4c4c4c;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    padding-left: 5px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    width: 25px;
+    height: 25px;
+}
+
+
+input:hover {
+    border-color: #0099cc;
+}
+
+::placeholder {
+    font-size: 16px;
+}
+
+input:focus {
+    background-color: rgba(0, 153, 204, 0.1);
+    /* Màu xanh khi click vào */
+    outline: none;
+    /* Ẩn viền mặc định của trình duyệt */
+}
+
+.current-status {
+    border: 1px transparent solid;
+    margin-top: 15px;
+}
+
+.current-label {
+    border: 1px transparent solid;
+    height: 25px;
+}
+
+.status-1,
+.status-2 {
+    border: 1px transparent solid;
+    display: flex;
+}
+
+.employed,
+.self-employed,
+.unemployed,
+.student {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 34px;
+}
+
+input[type="radio"] {
+    width: 20px;
+    /* Kích thước radio */
+    height: 20px;
+    appearance: none;
+    /* Ẩn radio mặc định */
+    border: 2px solid #333;
+    border-radius: 50%;
+    position: relative;
+}
+
+input[type="radio"]:checked::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+}
+
+button {
+    margin-top: 15px;
+    margin-right: 10px;
+    height: 34px;
+    width: 70px;
+    border-radius: 3px;
+}
+
+.click-to-upload {
+    border: 1px solid transparent;
+    width: 32px;
+    height: 32px;
+    background-color: #4c4c4c59;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 0px;
+    border-right: 3px;
+    cursor: pointer
+}
+
+.click-to-delete {
+    border: 1px solid transparent;
+    width: 33px;
+    height: 32px;
+    background-color: #4c4c4c59;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 33px;
+    cursor: pointer;
+    font-size: larger;
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .body-default {
+        width: 90%;
+        height: auto;
+    }
+
+    .header {
+        font-size: 30px;
+    }
+
+    .name-input,
+    .position-and-date,
+    .resume,
+    .status-1,
+    .status-2 {
+        display: block !important;
+    }
+
+    .first-name,
+    .last-name,
+    .resume-link,
+    .position,
+    .link,
+    .available-date,
+    .resume-upload,
+    .employed,
+    .self-employed,
+    .unemployed,
+    .student {
+        width: 100%;
+        border: 1px transparent solid;
+        box-sizing: border-box;
+    }
+
+    .last-name {
+        margin-left: 0px;
+    }
+
+    .available-date,
+    .resume-upload {
+        margin-left: 0px;
+        margin-top: 15px;
+    }
+
+    .current-status {
+        border: 1px transparent solid;
+        margin-top: 15px;
+    }
+
+    .status-1,
+    .status-2 {
+        border: 1px transparent solid;
+    }
+}
