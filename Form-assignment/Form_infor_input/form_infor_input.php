@@ -1,4 +1,7 @@
 <?php
+
+include 'connect.php'; // Gọi file kết nối DB
+
 function showInfor()
 {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
