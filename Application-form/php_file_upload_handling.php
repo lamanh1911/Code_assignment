@@ -1,4 +1,7 @@
 <?php
+
+include 'connect.php'; // Gọi file kết nối DB
+
 function showInfor()
 {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -53,3 +56,20 @@ function showInfor()
 }
 
 showInfor();
+
+
+// 🛠️ Lấy dữ liệu từ form và làm sạch dữ liệu để tránh SQL Injection
+$first = mysqli_real_escape_string($conn, $_POST['first']);
+$email = mysqli_real_escape_string($conn, $_POST['mail']);
+
+// 🛠️ Thực hiện truy vấn an toàn hơn
+$sql = "INSERT INTO users (first_name, email) VALUES ('$first', '$email')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Dữ liệu đã được lưu thành công!";
+} else {
+    echo "Lỗi: " . $conn->error;
+}
+
+// 🔐 Đóng kết nối
+$conn->close();

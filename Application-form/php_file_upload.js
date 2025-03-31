@@ -22,9 +22,9 @@ function setMessage() {
     }
     const firstName = document.querySelector("#first").value.trim();
     const lastName = document.querySelector("#last").value.trim();
-    // const email = document.querySelector("#mail").value.trim();
+    const email = document.querySelector("#mail").value.trim();
     const position = document.querySelector("#position").value.trim();
-    // const date = document.querySelector("#date").value.trim();
+    const date = document.querySelector("#date").value.trim();
     const status = document.querySelector('#status input[type="radio"]:checked');
     const link = document.querySelector("#link").value.trim();
     const referMail = document.querySelector("#referenceMail").value.trim();
@@ -41,11 +41,11 @@ function setMessage() {
         setError("lastError", errors.last)
     }
 
-    // if (!email) {
-    //     setError("mailError", errors.email)
-    // } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    //     setError("mailError", errors.invalidEmail)
-    // }
+    if (!email) {
+        setError("mailError", errors.email)
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        setError("mailError", errors.invalidEmail)
+    }
 
     if (referMail) {
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(referMail)) {
@@ -57,17 +57,17 @@ function setMessage() {
         setError("positionError", errors.position)
     }
 
-    // const today = new Date();
-    // const year = today.getFullYear();
-    // const month = String(today.getMonth() + 1).padStart(2, '0'); // thêm số 0 phía trước nếu cần
-    // const day = String(today.getDate()).padStart(2, '0');
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0'); // thêm số 0 phía trước nếu cần
+    const day = String(today.getDate()).padStart(2, '0');
 
-    // const formattedToday = `${year}-${month}-${day}`;
-    // if (!date) {
-    //     setError("dateError", errors.date)
-    // } else if (date < formattedToday) {
-    //     setError("dateError", errors.invalidDate)
-    // }
+    const formattedToday = `${year}-${month}-${day}`;
+    if (!date) {
+        setError("dateError", errors.date)
+    } else if (date < formattedToday) {
+        setError("dateError", errors.invalidDate)
+    }
 
     if (!link) {
         setError("linkError", errors.link)
@@ -77,9 +77,9 @@ function setMessage() {
         setError("statusError", errors.status)
     }
 
-    // if (fileInput.files.length === 0) {
-    //     setError("fileError", errors.file)
-    // }
+    if (fileInput.files.length === 0) {
+        setError("fileError", errors.file)
+    }
 
     function setError(id, message) {
         document.getElementById(id).innerText = message;
@@ -99,13 +99,13 @@ uploadBtn.addEventListener("click", function () {
 fileInput.addEventListener("change", function () {
     if (fileInput.files.length > 0) {
         const file = fileInput.files[0];
-        // const fileNameToLowerCase = file.name.toLowerCase();
-        // if (fileNameToLowerCase.endsWith('.pdf')) {
-        //     document.getElementById("fileError").innerText = "";
-        fileName.value = file.name;
-        // } else {
-        //     document.getElementById("fileError").innerText = "Please upload a PDF file only.";
-        // }
+        const fileNameToLowerCase = file.name.toLowerCase();
+        if (fileNameToLowerCase.endsWith('.pdf')) {
+            document.getElementById("fileError").innerText = "";
+            fileName.value = file.name;
+        } else {
+            document.getElementById("fileError").innerText = "Please upload a PDF file only.";
+        }
     }
     fileNameAvailable();
 });
