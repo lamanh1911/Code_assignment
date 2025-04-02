@@ -10,7 +10,7 @@
 
 <body>
     <div class="body-default">
-        <form id="applicationForm" method="post" action="php_file_upload_handling.php" novalidate>
+        <form id="applicationForm" method="post" action="php_file_upload_handling.php" novalidate enctype="multipart/form-data">
             <div class="form-header-and-description">
                 <div class="header">Job Application Form</div>
                 <div class="line"></div>
@@ -45,11 +45,11 @@
                         <div class="arrow-icon"><i class="arrow down"></i></div>
                         <select name="position" id="position">
                             <option value="" disabled selected>- Select -</option>
-                            <option value="teamlead">Senior PHP teamlead</option>
-                            <option value="cto">CTO</option>
-                            <option value="ceo">CEO</option>
-                            <option value="manager">IT manager</option>
-                            <option value="coach">Coach</option>
+                            <option value=1>Senior PHP teamlead</option>
+                            <option value=2>CTO</option>
+                            <option value=3>CEO</option>
+                            <option value=4>IT manager</option>
+                            <option value=5>Coach</option>
                         </select>
                     </div>
                     <span class="error" id="positionError"></span>
@@ -67,21 +67,21 @@
                 <div class="current-label"><label>What is your current employee status?<span style="color: red;">*</span></label></div>
                 <div class="status-1">
                     <div class="employed">
-                        <input type="radio" id="employed" name="employed" value="employed">
+                        <input type="radio" id="employed" name="status" value=1>
                         <label for="employed">Employed</label>
                     </div>
                     <div class="self-employed">
-                        <input type="radio" id="self-employed" name="selfEmployed" value="self-employed">
+                        <input type="radio" id="self-employed" name="status" value=2>
                         <label for="employed">Self-Employed</label>
                     </div>
                 </div>
                 <div class="status-2">
                     <div class="unemployed">
-                        <input type="radio" id="unemployed" name="unemployed" value="unemployed">
+                        <input type="radio" id="unemployed" name="status" value=3>
                         <label for="unemployed">Unemployed</label>
                     </div>
                     <div class="student">
-                        <input type="radio" id="student" name="student" value="student">
+                        <input type="radio" id="student" name="status" value=4>
                         <label for="student">Student</label>
                     </div>
                 </div>
