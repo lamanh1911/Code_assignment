@@ -1,0 +1,108 @@
+body {
+    font-family: 'Varela Round', sans-serif;
+    background-color: #dadada !important;
+}
+
+.employee-create-form {
+    border: 1px solid transparent;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 5%;
+    color: #566787;
+    border-radius: 3px;
+    background: white;
+}
+
+.create-form-header {
+    border: 1px solid transparent;
+    border-bottom-color: #dadada;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-title {
+    border: 1px solid transparent;
+    height: 30px;
+    width: 28%;
+    font-size: 25px;
+}
+
+input[type="text"] {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.modal-body {
+    border: 1px solid transparent;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.buttons {
+    border: 1px solid transparent;
+    width: 100%;
+    height: 80px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: #ecf0f1;
+}
+
+.name-input,
+.email-input,
+.address-input,
+.phone-input {
+    border: 1px solid transparent;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+}
+
+a {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+
+@media (max-width: 768px) {
+    .create-form-header {
+        border: 1px solid transparent;
+        border-bottom-color: #dadada;
+        display: flex;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .employee-create-form {
+        border: 1px solid transparent;
+        width: 98%;
+        margin-left: 1%;
+        margin-top: 5%;
+        color: #566787;
+        border-radius: 3px;
+        background: white;
+    }
+
+    .add-title {
+        border: 1px solid transparent;
+        height: 30px;
+        width: 45%;
+        font-size: 25px;
+    }
+}

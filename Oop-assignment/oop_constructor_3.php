@@ -17,6 +17,12 @@ class ElectricBill
         $sum = $this->units * $this->unitPrice;
         return "Khách hàng: {$this->customerName} - Số điện: {$this->units} kWh - Thành tiền: {$sum}";
     }
+
+    function showBillDetail()
+    {
+        $sum = $this->units * $this->unitPrice;
+        return "Khách hàng: {$this->customerName} - Số điện: {$this->units} kWh - Thành tiền: {$sum}";
+    }
 }
 
 $bill1 = new ElectricBill("Lam Anh", 1000, 200);
