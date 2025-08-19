@@ -1,0 +1,30 @@
+i {
+    margin-right: 5px;
+}
+
+.header {
+    display: flex;
+    height: 80px;
+    border: 1px solid black;
+    align-items: center;
+    background-color: #435d7d;
+}
+
+.header-title {
+    width: 50%;
+    color: white;
+    margin-left: 20px;
+}
+
+.header-action {
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.action {
+    display: flex;
+}
